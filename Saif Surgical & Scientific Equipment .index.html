@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saif Surgical & Scientific Equipment | Anand, Gujarat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#08090F;
+--bg2:#0D0F1A;
+--bg3:#12152A;
+--gold:#C9A84C;
+--gold2:#F0D080;
+--gold3:#A8732A;
+--gold-glow:rgba(201,168,76,0.25);
+--glass:rgba(255,255,255,0.03);
+--glass-border:rgba(201,168,76,0.18);
+--text:#F0EDE6;
+--muted:#8A8070;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--gold3);border-radius:2px}
+
+/* PARTICLES */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:float linear infinite}
+@keyframes float{0%{transform:translateY(100vh) translateX(0);opacity:0}10%{opacity:0.6}90%{opacity:0.2}100%{transform:translateY(-100px) translateX(40px);opacity:0}}
+
+/* NAVBAR */
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1.2rem 5%;display:flex;align-items:center;justify-content:space-between;transition:all 0.4s}
+nav.scrolled{background:rgba(8,9,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);padding:0.8rem 5%}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;background:linear-gradient(135deg,var(--gold),var(--gold2),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo span{display:block;font-size:0.65rem;font-family:'DM Sans',sans-serif;font-weight:300;color:var(--muted);-webkit-text-fill-color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:-2px}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;transition:color 0.3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#0a0900;padding:0.6rem 1.5rem;border:none;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;cursor:pointer;letter-spacing:1px;text-transform:uppercase;transition:transform 0.3s,box-shadow 0.3s;text-decoration:none}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--gold-glow)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:200}
+.hamburger span{width:25px;height:2px;background:var(--gold);transition:all 0.3s}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;z-index:1}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1600&q=80') center/cover;filter:brightness(0.25) saturate(0.6)}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,168,76,0.05) 0%,rgba(8,9,15,0.7) 70%)}
+.hero-content{position:relative;z-index:2;max-width:900px;padding:0 2rem}
+.hero-badge{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:0.4rem 1.2rem;border-radius:50px;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:2rem;animation:pulse-border 2s infinite}
+@keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 var(--gold-glow)}50%{box-shadow:0 0 0 8px transparent}}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:600;line-height:1.1;margin-bottom:1.5rem}
+.gold-text{background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:shimmer 4s ease infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-sub{color:var(--muted);font-size:1rem;line-height:1.8;max-width:600px;margin:0 auto 2.5rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-primary{background:linear-gradient(135deg,var(--gold3),var(--gold));color:#06050a;padding:0.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.85rem;letter-spacing:1px;transition:all 0.3s;border:none;cursor:pointer}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 40px var(--gold-glow)}
+.btn-whatsapp{background:rgba(37,211,102,0.15);border:1px solid rgba(37,211,102,0.4);color:#25d366;padding:0.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.85rem;letter-spacing:1px;transition:all 0.3s}
+.btn-whatsapp:hover{background:rgba(37,211,102,0.25);transform:translateY(-3px);box-shadow:0 15px 40px rgba(37,211,102,0.2)}
+.btn-outline{background:transparent;border:1px solid var(--glass-border);color:var(--text);padding:0.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:400;font-size:0.85rem;letter-spacing:1px;transition:all 0.3s;cursor:pointer}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.hero-info{color:var(--muted);font-size:0.8rem;letter-spacing:1px}
+.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--muted);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent)}
+
+/* STATS */
+#stats{position:relative;z-index:1;padding:5rem 5%;background:linear-gradient(135deg,var(--bg2),var(--bg3))}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--glass-border);border:1px solid var(--glass-border);border-radius:16px;overflow:hidden;max-width:1000px;margin:0 auto}
+.stat-card{background:var(--bg2);padding:3rem 2rem;text-align:center;transition:background 0.3s}
+.stat-card:hover{background:var(--bg3)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.stat-label{color:var(--muted);font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;margin-top:0.5rem}
+
+/* SECTIONS GENERAL */
+section{position:relative;z-index:1;padding:7rem 5%}
+.section-tag{font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:500;line-height:1.2;margin-bottom:1.5rem}
+.section-sub{color:var(--muted);line-height:1.8;max-width:600px}
+
+/* ABOUT */
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1200px;margin:0 auto}
+.about-line{width:3px;height:80px;background:linear-gradient(to bottom,var(--gold),transparent);margin-bottom:2rem}
+.about-cards{display:flex;flex-direction:column;gap:1.5rem}
+.about-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:1.5rem 2rem;transition:all 0.4s;cursor:default}
+.about-card:hover{background:rgba(201,168,76,0.06);border-color:rgba(201,168,76,0.4);transform:translateX(8px)}
+.about-card-icon{font-size:1.5rem;margin-bottom:0.5rem}
+.about-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);margin-bottom:0.3rem}
+.about-card p{color:var(--muted);font-size:0.85rem;line-height:1.6}
+
+/* SERVICES */
+#services{background:var(--bg2)}
+.services-header{text-align:center;margin-bottom:4rem}
+.services-header .section-sub{margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto}
+.service-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;padding:2.5rem 2rem;transition:all 0.4s;cursor:default;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(201,168,76,0.04) 0%,transparent 60%);opacity:0;transition:opacity 0.4s}
+.service-card:hover::before{opacity:1}
+.service-card:hover{border-color:rgba(201,168,76,0.4);box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 30px var(--gold-glow);transform:translateY(-8px)}
+.service-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--gold3),var(--gold));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.5rem}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.8rem}
+.service-card p{color:var(--muted);font-size:0.85rem;line-height:1.7}
+
+/* TIMELINE */
+#experience{background:var(--bg)}
+.timeline{max-width:900px;margin:3rem auto 0;position:relative}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--gold),var(--gold),transparent);transform:translateX(-50%)}
+.timeline-item{display:flex;justify-content:flex-end;padding-right:calc(50% + 2.5rem);margin-bottom:3rem;position:relative}
+.timeline-item:nth-child(even){justify-content:flex-start;padding-right:0;padding-left:calc(50% + 2.5rem)}
+.timeline-dot{position:absolute;left:50%;top:1rem;width:12px;height:12px;background:var(--gold);border-radius:50%;transform:translateX(-50%);box-shadow:0 0 20px var(--gold-glow)}
+.timeline-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:1.5rem 2rem;max-width:320px;transition:all 0.3s}
+.timeline-card:hover{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.05)}
+.timeline-year{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold);font-weight:600}
+.timeline-card h3{font-size:0.95rem;color:var(--text);margin:0.3rem 0}
+.timeline-card p{font-size:0.8rem;color:var(--muted);line-height:1.6}
+
+/* CLIENTS */
+#clients{background:var(--bg2)}
+.clients-inner{max-width:1000px;margin:0 auto}
+.featured-client{background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.03));border:1px solid rgba(201,168,76,0.35);border-radius:24px;padding:3rem;text-align:center;margin-bottom:3rem;position:relative;overflow:hidden}
+.featured-client::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.featured-badge{display:inline-block;background:rgba(201,168,76,0.15);border:1px solid var(--gold);color:var(--gold);padding:0.3rem 1rem;border-radius:50px;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:1.5rem}
+.featured-client h2{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--text);margin-bottom:0.5rem}
+.featured-client p{color:var(--muted);font-size:0.9rem}
+.client-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.client-item{background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:1.5rem;text-align:center;transition:all 0.3s}
+.client-item:hover{border-color:var(--gold-glow);background:rgba(201,168,76,0.04)}
+.client-item span{font-size:2rem;display:block;margin-bottom:0.8rem}
+.client-item p{color:var(--muted);font-size:0.8rem}
+
+/* QUOTE FORM */
+#quote{background:var(--bg)}
+.quote-inner{max-width:800px;margin:0 auto}
+.form-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:24px;padding:3rem;backdrop-filter:blur(20px)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.form-full{grid-column:1/-1}
+.form-group{display:flex;flex-direction:column;gap:0.5rem}
+label{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);border-radius:10px;padding:0.9rem 1.2rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.3s}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+select option{background:var(--bg2);color:var(--text)}
+textarea{resize:vertical;min-height:120px}
+.submit-btn{width:100%;padding:1.1rem;background:linear-gradient(135deg,var(--gold3),var(--gold),var(--gold2));color:#06050a;border:none;border-radius:50px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
+.submit-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s}
+.submit-btn:hover::before{left:100%}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 15px 50px var(--gold-glow)}
+#form-msg{text-align:center;margin-top:1rem;color:var(--gold);font-size:0.85rem;min-height:1.2rem}
+
+/* MAP */
+#contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;max-width:1200px;margin:0 auto}
+.map-frame{border-radius:20px;overflow:hidden;border:1px solid var(--glass-border);height:420px}
+.map-frame iframe{width:100%;height:100%;border:none;filter:invert(0.9) hue-rotate(180deg) saturate(0.4) brightness(0.6)}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.info-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 1.5rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;transition:all 0.3s}
+.info-item:hover{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.04)}
+.info-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold3),var(--gold));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.info-item h4{font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem}
+.info-item p,.info-item a{color:var(--text);font-size:0.9rem;line-height:1.6;text-decoration:none;display:block}
+.info-item a:hover{color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--glass-border);padding:4rem 5% 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem}
+.footer-desc{color:var(--muted);font-size:0.85rem;line-height:1.8;max-width:280px}
+.footer-col h4{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.7rem}
+.footer-col ul li a{color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.3s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--glass-border);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:0.8rem}
+.footer-stars{color:var(--gold);font-size:1rem;letter-spacing:2px}
+
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:200;width:56px;height:56px;background:linear-gradient(135deg,#128C7E,#25D366);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 30px rgba(37,211,102,0.4);animation:wa-pulse 2.5s infinite;transition:transform 0.3s}
+.wa-float:hover{transform:scale(1.1)}
+@keyframes wa-pulse{0%,100%{box-shadow:0 8px 30px rgba(37,211,102,0.4)}50%{box-shadow:0 8px 50px rgba(37,211,102,0.7)}}
+.wa-float svg{width:28px;height:28px;fill:white}
+
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.fade-delay-1{transition-delay:0.1s}
+.fade-delay-2{transition-delay:0.2s}
+.fade-delay-3{transition-delay:0.3s}
+.fade-delay-4{transition-delay:0.4s}
+.fade-delay-5{transition-delay:0.5s}
+.fade-delay-6{transition-delay:0.6s}
+
+/* MOBILE NAV */
+@media(max-width:900px){
+.nav-links,.nav-cta-wrap{display:none}
+.nav-links.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,9,15,0.98);align-items:center;justify-content:center;gap:2.5rem;z-index:150}
+.nav-links.open a{font-size:1.2rem}
+.hamburger{display:flex}
+.about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+.services-grid{grid-template-columns:1fr 1fr}
+.stats-grid{grid-template-columns:1fr 1fr}
+.form-grid{grid-template-columns:1fr}
+.timeline::before{left:1rem}
+.timeline-item,.timeline-item:nth-child(even){justify-content:flex-start;padding-right:0;padding-left:3rem}
+.timeline-dot{left:1rem}
+.client-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+section{padding:5rem 5%}
+.services-grid,.client-grid{grid-template-columns:1fr}
+.stats-grid{grid-template-columns:1fr 1fr}
+.hero-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<div id="particles"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="logo" style="display:flex;align-items:center;gap:10px">
+  <img src="data:image/png;base64,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" alt="Saif Surgical Logo" style="height:52px;width:auto;border-radius:6px">
+  <div>Saif Surgical <span>& Scientific Equipment</span></div>
+</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta-wrap">
+    <a href="#quote" class="nav-cta">Request a Quote</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge fade-in">Anand's Most Trusted Since 2009</div>
+    <h1 class="hero-title fade-in fade-delay-1">
+      Leading <span class="gold-text">Surgical & Scientific</span><br>Equipment Supplier
+    </h1>
+    <p class="hero-sub fade-in fade-delay-2">Trusted by hospitals, clinics, laboratories & schools across Gujarat and beyond. Quality products, fast delivery, unmatched expertise.</p>
+    <div class="hero-btns fade-in fade-delay-3">
+      <a href="tel:9898056315" class="btn-primary">📞 Call: 9898056315</a>
+      <a href="https://wa.me/919898056315" target="_blank" class="btn-whatsapp">💬 WhatsApp Now</a>
+      <a href="#quote" class="btn-outline">Get a Quote</a>
+    </div>
+    <p class="hero-info fade-in fade-delay-4">Owner: Mr. Aliasgar A. Vohara &nbsp;•&nbsp; Anand, Gujarat 388001</p>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats" style="padding:0">
+  <div class="stats-grid">
+    <div class="stat-card fade-in"><div class="stat-num" data-target="15">0</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat-card fade-in fade-delay-2"><div class="stat-num" data-target="25">0</div><div class="stat-label">OT Projects</div></div>
+    <div class="stat-card fade-in fade-delay-3"><div class="stat-num" data-target="30">0</div><div class="stat-label">Overseas Installations</div></div>
+    <div class="stat-card fade-in fade-delay-4"><div class="stat-num" data-target="5">0</div><div class="stat-label">Countries Served</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <div class="about-line"></div>
+      <div class="section-tag fade-in">Our Story</div>
+      <h2 class="section-title fade-in fade-delay-1">Precision. Quality.<br><span class="gold-text">Trust.</span></h2>
+      <p class="section-sub fade-in fade-delay-2" style="margin-bottom:1.5rem">Established in 2009, Saif Surgical & Scientific Equipment has become a trusted leader in surgical, scientific, and lab equipment solutions. Over 15+ years, we've completed 25+ operating theater projects and 30+ overseas installations across 5+ countries.</p>
+      <p class="section-sub fade-in fade-delay-3">Our portfolio spans top-tier hospitals, school labs, and major clinics — including Santram Eye Hospital, Nadiad. We provide everything from advanced microscopes to complete OT setups, along with HVAC solutions, making us a preferred partner worldwide.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card fade-in" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.1">
+        <div class="about-card-icon">🏆</div>
+        <h3>Excellence</h3>
+        <p>Every product meets the highest international medical standards, ensuring safety and reliability.</p>
+      </div>
+      <div class="about-card fade-in fade-delay-2" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.1">
+        <div class="about-card-icon">🌍</div>
+        <h3>Global Reach</h3>
+        <p>30+ overseas installations across 5+ countries. Bringing Gujarat's expertise to the world.</p>
+      </div>
+      <div class="about-card fade-in fade-delay-3" data-tilt data-tilt-max="8" data-tilt-glare data-tilt-max-glare="0.1">
+        <div class="about-card-icon">⚡</div>
+        <h3>Innovation</h3>
+        <p>From state-of-the-art microscopes to full OT setups and HVAC solutions — all under one roof.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div class="section-tag fade-in">What We Offer</div>
+    <h2 class="section-title fade-in fade-delay-1">Our <span class="gold-text">Services</span></h2>
+    <p class="section-sub fade-in fade-delay-2">Comprehensive medical and scientific solutions for hospitals, clinics, labs, and schools.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <div class="service-icon">🏥</div>
+      <h3>Complete OT Setups</h3>
+      <p>End-to-end operating theater design and installation. 25+ OT projects completed with precision and excellence.</p>
+    </div>
+    <div class="service-card fade-in fade-delay-2" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <div class="service-icon">🔬</div>
+      <h3>Advanced Microscopes</h3>
+      <p>Premium optical and digital microscopes for medical, research, and educational laboratories.</p>
+    </div>
+    <div class="service-card fade-in fade-delay-3" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <div class="service-icon">⚕️</div>
+      <h3>Surgical Instruments</h3>
+      <p>High-quality surgical tools and instruments from trusted global manufacturers for all specialties.</p>
+    </div>
+    <div class="service-card fade-in fade-delay-4" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <div class="service-icon">🧪</div>
+      <h3>Scientific & Lab Equipment</h3>
+      <p>Complete laboratory setups for schools, colleges, and research institutions across Gujarat.</p>
+    </div>
+    <div class="service-card fade-in fade-delay-5" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <div class="service-icon">❄️</div>
+      <h3>HVAC Solutions</h3>
+      <p>Specialized HVAC systems for medical environments — clean rooms, OTs, and sterile zones.</p>
+    </div>
+    <div class="service-card fade-in fade-delay-6" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <div class="service-icon">🛏️</div>
+      <h3>Hospital Furniture</h3>
+      <p>Medical-grade furniture and fixtures for wards, OPDs, ICUs, and complete hospital setups.</p>
+    </div>
+    <div class="service-card fade-in fade-delay-1" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <div class="service-icon">🔧</div>
+      <h3>Equipment Repair & Servicing</h3>
+      <p>Expert repair and maintenance of surgical instruments, lab equipment, and medical devices. Fast turnaround, genuine parts, trusted by hospitals across Gujarat.</p>
+    </div>
+    <div class="service-card fade-in fade-delay-2" data-tilt data-tilt-max="6" data-tilt-glare data-tilt-max-glare="0.08">
+      <div class="service-icon">❄️</div>
+      <h3>AC Supply & Installation</h3>
+      <p>Supply, installation, and servicing of air conditioning units for hospitals, clinics, OTs, labs, and commercial spaces. All major brands available.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="experience" style="background:var(--bg)">
+  <div style="text-align:center;margin-bottom:1rem">
+    <div class="section-tag fade-in">Our Journey</div>
+    <h2 class="section-title fade-in fade-delay-1">15+ Years of <span class="gold-text">Excellence</span></h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item fade-in">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">2009</div>
+        <h3>Founded in Anand</h3>
+        <p>Mr. Aliasgar A. Vohara establishes Saif Surgical with a vision to serve Gujarat's medical needs.</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-in fade-delay-2">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">2012</div>
+        <h3>First OT Project</h3>
+        <p>Successfully completed our first complete operating theater setup, setting the benchmark for quality.</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-in fade-delay-3">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">2015</div>
+        <h3>Santram Eye Hospital</h3>
+        <p>Partnered with Santram Eye Hospital Nadiad — a landmark project in our portfolio.</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-in fade-delay-4">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">2018</div>
+        <h3>International Expansion</h3>
+        <p>Launched overseas operations, completing installations across 5+ countries globally.</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-in fade-delay-5">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">2024</div>
+        <h3>30+ Global Installations</h3>
+        <p>25+ OT projects, 30+ overseas installations — a trusted name across the medical world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="clients-inner">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="section-tag fade-in">Who We Serve</div>
+      <h2 class="section-title fade-in fade-delay-1">Trusted <span class="gold-text">Partners</span></h2>
+    </div>
+    <div class="featured-client fade-in" data-tilt data-tilt-max="4" data-tilt-glare data-tilt-max-glare="0.05">
+      <div class="featured-badge">⭐ Featured Partner</div>
+      <h2>Santram Eye Hospital</h2>
+      <p style="color:var(--muted)">Nadiad, Gujarat &nbsp;•&nbsp; Complete surgical equipment & OT setup</p>
+    </div>
+    <div class="client-grid">
+      <div class="client-item fade-in"><span>🏥</span><p>Hospitals & Multi-specialty Clinics</p></div>
+      <div class="client-item fade-in fade-delay-2"><span>🔬</span><p>Research & Diagnostic Laboratories</p></div>
+      <div class="client-item fade-in fade-delay-3"><span>🎓</span><p>Schools & Educational Institutions</p></div>
+      <div class="client-item fade-in fade-delay-4"><span>🌍</span><p>International Medical Facilities</p></div>
+      <div class="client-item fade-in fade-delay-5"><span>💊</span><p>Pharmacies & Medical Stores</p></div>
+      <div class="client-item fade-in fade-delay-6"><span>🏗️</span><p>New Hospital Projects</p></div>
+      <div class="client-item fade-in fade-delay-1"><span>🔧</span><p>Equipment Repair & AMC</p></div>
+      <div class="client-item fade-in fade-delay-2"><span>❄️</span><p>AC Supply & Service</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section id="quote">
+  <div class="quote-inner">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="section-tag fade-in">Get In Touch</div>
+      <h2 class="section-title fade-in fade-delay-1">Request a <span class="gold-text">Quote</span></h2>
+      <p class="section-sub fade-in fade-delay-2" style="margin:0 auto">Fill the form and we'll reach out via WhatsApp instantly.</p>
+    </div>
+    <div class="form-card fade-in">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="f-name" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="f-phone" placeholder="Your contact number">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="f-email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" id="f-city" placeholder="Your city">
+        </div>
+        <div class="form-group">
+          <label>Product / Service Required</label>
+          <select id="f-product">
+            <option value="">Select a service</option>
+            <option>Complete OT Setup</option>
+            <option>Microscopes & Lab Equipment</option>
+            <option>Surgical Instruments</option>
+            <option>Scientific Equipment</option>
+            <option>HVAC Solutions</option>
+            <option>Hospital Furniture</option>
+            <option>Equipment Repair & Servicing</option>
+            <option>AC Supply & Installation</option>
+            <option>Other / General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Budget Range</label>
+          <select id="f-budget">
+            <option value="">Select range</option>
+            <option>Below ₹1 Lakh</option>
+            <option>₹1L – ₹5L</option>
+            <option>₹5L – ₹20L</option>
+            <option>₹20L – ₹1 Crore</option>
+            <option>Above ₹1 Crore</option>
+          </select>
+        </div>
+        <div class="form-group form-full">
+          <label>Message</label>
+          <textarea id="f-msg" placeholder="Tell us about your requirements..."></textarea>
+        </div>
+        <div class="form-full">
+          <button class="submit-btn" onclick="sendQuote()">🚀 Send Quote via WhatsApp</button>
+          <p id="form-msg"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP & CONTACT -->
+<section id="contact">
+  <div style="text-align:center;margin-bottom:3rem">
+    <div class="section-tag fade-in">Find Us</div>
+    <h2 class="section-title fade-in fade-delay-1">Visit Our <span class="gold-text">Store</span></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="map-frame fade-in">
+      <iframe src="https://maps.google.com/maps?q=Saif+Surgical+Scientific+Equipment+Bhalej+Rd+Ganesh+Chokdi+Sardar+Ganj+Anand+Gujarat+388001&output=embed&z=16" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="contact-info">
+      <div class="info-item fade-in" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.05">
+        <div class="info-icon">📍</div>
+        <div>
+          <h4>Address</h4>
+          <p>Bhalej Rd, near Shah Petroleum,<br>Ganesh Chokdi, Sardar Ganj,<br>Anand, Gujarat 388001</p>
+        </div>
+      </div>
+      <div class="info-item fade-in fade-delay-2" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.05">
+        <div class="info-icon">📞</div>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:9898056315">+91 98980 56315</a>
+          <a href="tel:9725845973">+91 97258 45973</a>
+        </div>
+      </div>
+      <div class="info-item fade-in fade-delay-3" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.05">
+        <div class="info-icon">💬</div>
+        <div>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/919898056315" target="_blank">Chat on WhatsApp →</a>
+        </div>
+      </div>
+      <div class="info-item fade-in fade-delay-4" data-tilt data-tilt-max="5" data-tilt-glare data-tilt-max-glare="0.05">
+        <div class="info-icon">🕐</div>
+        <div>
+          <h4>Business Hours</h4>
+          <p>Monday – Saturday: 9 AM – 8 PM</p>
+          <p style="color:var(--muted);font-size:0.8rem">Sunday: Closed</p>
+        </div>
+      </div>
+      <div class="info-item fade-in fade-delay-5">
+        <div class="info-icon">⭐</div>
+        <div>
+          <h4>Google Rating</h4>
+          <p style="color:var(--gold);font-size:1.2rem">★★★★★ <span style="color:var(--text)">5.0</span></p>
+          <p style="font-size:0.8rem;color:var(--muted)">Verified Google Business</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem">
+  <img src="data:image/png;base64,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" alt="Logo" style="height:56px;width:auto;border-radius:8px">
+  <div class="footer-logo" style="margin-bottom:0">Saif Surgical</div>
+</div>
+      <p class="footer-desc">& Scientific Equipment — Anand's most trusted supplier of surgical, scientific, and laboratory equipment since 2009.</p>
+      <br>
+      <div class="footer-stars">★★★★★</div>
+      <p style="color:var(--muted);font-size:0.75rem;margin-top:0.3rem">5.0 on Google Reviews</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#quote">Get a Quote</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:9898056315">+91 98980 56315</a></li>
+        <li><a href="tel:9725845973">+91 97258 45973</a></li>
+        <li><a href="https://wa.me/919898056315">WhatsApp Us</a></li>
+        <li><a href="#contact">Find on Map</a></li>
+        <li><a href="https://saif-surgical-and-scientific-equipm.vercel.app" target="_blank">Visit Website</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Saif Surgical & Scientific Equipment. All rights reserved.</span>
+    <span>Owner: Mr. Aliasgar A. Vohara, Anand, Gujarat</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919898056315" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// PARTICLES
+const pc = document.getElementById('particles');
+for(let i=0;i<35;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  p.style.cssText=`left:${Math.random()*100}%;width:${Math.random()*3+1}px;height:${Math.random()*3+1}px;animation-duration:${Math.random()*15+10}s;animation-delay:${Math.random()*15}s;opacity:${Math.random()*0.5}`;
+  pc.appendChild(p);
+}
+
+// NAVBAR SCROLL
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
+});
+
+// MOBILE NAV
+function toggleNav(){
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.remove('open');
+}));
+
+// FADE IN OBSERVER
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+// COUNTER ANIMATION
+function animateCounter(el){
+  const target=parseInt(el.dataset.target);
+  let current=0;
+  const step=target/60;
+  const timer=setInterval(()=>{
+    current+=step;
+    if(current>=target){current=target;clearInterval(timer);}
+    el.textContent=Math.floor(current)+'+';
+  },30);
+}
+const statsObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-target]').forEach(animateCounter);
+      statsObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+statsObs.observe(document.getElementById('stats'));
+
+// VANILLA TILT
+VanillaTilt.init(document.querySelectorAll('[data-tilt]'),{max:8,speed:400,glare:true,'max-glare':0.1});
+
+// QUOTE FORM
+function sendQuote(){
+  const name=document.getElementById('f-name').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const city=document.getElementById('f-city').value.trim();
+  const product=document.getElementById('f-product').value;
+  const budget=document.getElementById('f-budget').value;
+  const msg=document.getElementById('f-msg').value.trim();
+  if(!name||!phone){
+    document.getElementById('form-msg').textContent='⚠️ Please enter your name and phone number.';
+    return;
+  }
+  const text=encodeURIComponent(
+    `🏥 *New Quote Request — Saif Surgical*\n\n`+
+    `👤 *Name:* ${name}\n`+
+    `📞 *Phone:* ${phone}\n`+
+    `📧 *Email:* ${email||'N/A'}\n`+
+    `🏙️ *City:* ${city||'N/A'}\n`+
+    `🔧 *Service:* ${product||'N/A'}\n`+
+    `💰 *Budget:* ${budget||'N/A'}\n`+
+    `📝 *Message:* ${msg||'N/A'}\n\n`+
+    `_Sent from saif-surgical website_`
+  );
+  window.open(`https://api.whatsapp.com/send?phone=919898056315&text=${text}`,'_blank');
+  setTimeout(()=>window.open(`https://api.whatsapp.com/send?phone=919725845973&text=${text}`,'_blank'),800);
+  document.getElementById('form-msg').textContent='✅ Opening WhatsApp for both numbers...';
+  document.getElementById('f-name').value='';
+  document.getElementById('f-phone').value='';
+  document.getElementById('f-email').value='';
+  document.getElementById('f-city').value='';
+  document.getElementById('f-product').value='';
+  document.getElementById('f-budget').value='';
+  document.getElementById('f-msg').value='';
+}
+</script>
+</body>
+</html>
